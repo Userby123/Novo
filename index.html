@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços Userby</title>
+    <style>
+        @keyframes colorChange {
+            0% { color: blue; }
+            25% { color: red; }
+            50% { color: yellow; }
+            75% { color: white; }
+            100% { color: orange; }
+        }
+
+        @keyframes clickEffect {
+            0% { transform: scale(1); }
+            50% { transform: scale(0.95); }
+            100% { transform: scale(1); }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a; /* Fundo escuro */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #333;
+        }
+
+        .username, .bio, .footer p, .contact-link, .options button, .audio-container {
+            animation: colorChange 5s infinite;
+        }
+
+        .username {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .bio {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            margin: 10px 0;
+        }
+
+        .options button {
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #555;
+            color: white;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .options button:hover {
+            background-color: #777;
+        }
+
+        .options button:active {
+            animation: clickEffect 0.2s;
+        }
+
+        .contact-container {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .contact-container img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            border: 2px solid;
+        }
+
+        .contact-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #555;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            border: 2px solid;
+        }
+
+        .contact-link:hover {
+            background-color: #777;
+        }
+
+        .payment-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #444;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .payment-popup img {
+            width: 100px;
+            height: auto;
+        }
+
+        .payment-popup p {
+            margin: 10px 0;
+        }
+
+        .payment-popup button {
+            padding: 10px;
+            background-color: #555;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .audio-container {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #222;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            animation: colorChange 5s infinite;
+        }
+
+        .audio-container audio {
+            width: 90%;
+        }
+
+        .footer {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://i.ibb.co/vspCWVC/EAA0-DB6-F-3258-4-B85-A729-43339-BBD4-AAC.jpg" alt="Profile Image" width="100">
+        <h1 class="username">Userby</h1>
+        <p class="bio">Eu sou imprevisível</p>
+        <div class="options">
+            <button onclick="showPaymentPopup('Investigação - $100')">Investigação - $100</button>
+            <button onclick="showPaymentPopup('Números de Telefone - $50')">Números de Telefone - $50</button>
+            <button onclick="showMethodMessage()">Métodos - Preço a ser questionado na rede social</button>
+        </div>
+        <div class="contact-container">
+            <img src="https://i.ibb.co/fNHPWpt/38968-CA1-D058-4-DB7-BA35-D81-D9-EF80-E1-B.png" alt="Profile Image">
+            <a class="contact-link" href="https://api.whatsapp.com/send?phone=+5587991210683">Contato no WhatsApp</a>
+        </div>
+        <p class="bio">Haverá novas atualizações em breve</p>
+        <div class="audio-container">
+            <audio controls>
+                <source src="https://s19.aconvert.com/convert/p3r68-cdx67/ld8xo-75oyy.mp3" type="audio/mpeg">
+                Seu navegador não suporta o elemento de áudio.
+            </audio>
+        </div>
+    </div>
+
+    <div id="paymentPopup" class="payment-popup">
+        <img src="https://i.ibb.co/fNHPWpt/38968-CA1-D058-4-DB7-BA35-D81-D9-EF80-E1-B.png" alt="Pix QR Code">
+        <p>Pague usando a chave Pix: anonymoumundial@gmail.com</p>
+        <p id="countdown">Expira em 59 minutos</p>
+        <button onclick="hidePaymentPopup()">Fechar</button>
+    </div>
+
+    <script>
+        let countdownInterval;
+
+        function showPaymentPopup(service) {
+            const popup = document.getElementById('paymentPopup');
+            const countdownElement = document.getElementById('countdown');
+            const expirationTime = new Date().getTime() + 59 * 60 * 1000;
+
+            popup.style.display = 'block';
+            updateCountdown(expirationTime, countdownElement);
+            
+            countdownInterval = setInterval(() => {
+                updateCountdown(expirationTime, countdownElement);
+            }, 1000);
+        }
+
+        function hidePaymentPopup() {
+            const popup = document.getElementById('paymentPopup');
+            popup.style.display = 'none';
+            clearInterval(countdownInterval);
+        }
+
+        function updateCountdown(expirationTime, countdownElement) {
+            const now = new Date().getTime();
+            const distance = expirationTime - now;
+
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownElement.textContent = `Expira em ${minutes}m ${seconds}s`;
+
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                countdownElement.textContent = 'A chave Pix expirou';
+            }
+        }
+
+        function showMethodMessage() {
+            alert("Para saber mais sobre os métodos, entre em contato pelo WhatsApp.");
+        }
+    </script>
+</body>
+</html>
