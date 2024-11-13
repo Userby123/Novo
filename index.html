@@ -27,10 +27,12 @@
             100% { box-shadow: 0 0 5px orange; }
         }
 
-        @keyframes float {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0); }
+        @keyframes ledGlow {
+            0% { box-shadow: 0 0 10px 5px blue; }
+            25% { box-shadow: 0 0 20px 10px red; }
+            50% { box-shadow: 0 0 30px 15px yellow; }
+            75% { box-shadow: 0 0 40px 20px white; }
+            100% { box-shadow: 0 0 10px 5px orange; }
         }
 
         body {
@@ -73,24 +75,13 @@
             margin-bottom: 20px;
         }
 
-        .contact-container img {
-            border-radius: 50%; /* Faz a imagem ser redonda */
+        .profile-contact img {
+            border-radius: 50%;
             width: 100px;
             height: 100px;
             margin-right: 0;
             border: 2px solid;
-            animation: glow 5s infinite; /* Adiciona o brilho girando ao redor */
-        }
-
-        .floating-image {
-            border-radius: 50%;
-            width: 80px;
-            height: 80px;
-            position: absolute;
-            animation: float 6s infinite;
-            cursor: pointer;
-            border: 2px solid;
-            animation: glow 5s infinite;
+            animation: ledGlow 5s infinite; /* Brilho em torno da miniatura */
         }
 
         .options {
@@ -218,23 +209,6 @@
 
     <script>
         let countdownInterval;
-        const floatingImages = [
-            "https://i.ibb.co/hY22wMR/B5-F7-D02-D-CD70-43-A0-870-E-277-A34-EC48-D8.jpg",
-            "https://i.ibb.co/DtRLRvy/EAFDB7-CB-DEFC-467-A-B293-1087-C85-A0256.jpg",
-            "https://i.ibb.co/CQHc033/FB9-F9-BE8-BADB-431-F-93-F3-B2-C495-C9-E29-B.jpg",
-            "https://i.ibb.co/kcd0kx6/71-B3-CF0-E-7-B9-A-490-E-BE14-DF340-B217-C1-D.jpg",
-            "https://i.ibb.co/xG3LxFT/544967-C5-1-D2-D-4078-910-D-97-E63-CAFD531.jpg"
-        ];
-
-        function createFloatingImage(src) {
-            const img = document.createElement("img");
-            img.src = src;
-            img.className = "floating-image";
-            img.style.left = `${Math.random() * 100}%`;
-            img.style.top = `${Math.random() * 100}%`;
-            img.onclick = () => window.location.href = "https://www.4chan.org";
-            document.body.appendChild(img);
-        }
 
         function showPaymentPopup(service) {
             const popup = document.getElementById('paymentPopup');
@@ -248,4 +222,33 @@
                 updateCountdown(expirationTime, countdownElement);
                 if (expirationTime - new Date().getTime() <= 0) {
                     hidePaymentPopup();
-[_{{{CITATION{{{_1{](https://github.com/lgfranco22/blog/tree/2ff765f5547038ea91aa40671858d9fd9d5ffb28/entrar.php)
+                }
+            }, 1000);
+        }
+
+        function hidePaymentPopup() {
+            const popup = document.getElementById('paymentPopup');
+            popup.style.display = 'none';
+            clearInterval(countdownInterval);
+        }
+
+        function updateCountdown(expirationTime, countdownElement) {
+            const now = new Date().getTime();
+            const distance = expirationTime - now;
+
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownElement.innerHTML = `Expira em ${minutes} minutos e ${seconds} segundos`;
+        }
+
+        function showUnavailableMessage(service) {
+            alert(service + " indisponível");
+        }
+
+        function showMethodMessage() {
+            alert("A ser questionado na rede social");
+        }
+    </script>
+</body>
+</html>
