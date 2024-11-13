@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,10 +21,9 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #1a1a1a; /* Fundo escuro */
+            background-color: #000; /* Fundo preto */
             color: white;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -32,6 +31,10 @@
         }
 
         .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
             text-align: center;
             padding: 20px;
             border-radius: 8px;
@@ -44,7 +47,7 @@
 
         .username {
             font-size: 36px;
-            margin-bottom: 10px;
+            margin-bottom: 5px; /* Reduzi o espaçamento para aproximar a imagem do nome */
         }
 
         .bio {
@@ -54,27 +57,43 @@
 
         .options {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             margin: 10px 0;
+            flex-wrap: wrap;
+        }
+
+        .options table {
+            width: 100%;
+        }
+
+        .options td {
+            padding: 10px;
         }
 
         .options button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
             padding: 10px;
-            margin: 5px 0;
             border: none;
-            border-radius: 5px;
-            background-color: #555;
+            border-radius: 10px;
+            background-color: #000; /* Botões pretos */
             color: white;
             cursor: pointer;
             position: relative;
+            animation: clickEffect 0.2s;
+            font-size: 16px;
+            box-shadow: 0 0 10px 0 #00f; /* LED azul ao redor */
+        }
+
+        .options button img {
+            margin-right: 10px;
+            width: 30px; /* Miniatura maior */
         }
 
         .options button:hover {
-            background-color: #777;
-        }
-
-        .options button:active {
-            animation: clickEffect 0.2s;
+            background-color: #222;
         }
 
         .contact-container {
@@ -85,8 +104,8 @@
 
         .contact-container img {
             border-radius: 50%;
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             margin-right: 10px;
             border: 2px solid;
         }
@@ -98,7 +117,7 @@
             color: white;
             border-radius: 5px;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 16px;
             border: 2px solid;
         }
 
@@ -155,29 +174,43 @@
 
         .footer {
             margin-top: 20px;
+            font-size: 12px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="https://i.ibb.co/vspCWVC/EAA0-DB6-F-3258-4-B85-A729-43339-BBD4-AAC.jpg" alt="Profile Image" width="100">
+        <img src="https://i.ibb.co/vspCWVC/EAA0-DB6-F-3258-4-B85-A729-43339-BBD4-AAC.jpg" alt="Profile Image" width="80">
         <h1 class="username">Userby</h1>
-        <p class="bio">Eu sou imprevisível</p>
+        <p class="bio">Fornecimento e Vendas</p>
         <div class="options">
-            <button onclick="showPaymentPopup('Investigação - $100')">Investigação - $100</button>
-            <button onclick="showPaymentPopup('Números de Telefone - $50')">Números de Telefone - $50</button>
-            <button onclick="showMethodMessage()">Métodos - Preço a ser questionado na rede social</button>
+            <table>
+                <tr>
+                    <td><button onclick="showPaymentPopup('Investigação - $100')"><img src="https://i.ibb.co/kcd0kx6/71-B3-CF0-E-7-B9-A-490-E-BE14-DF340-B217-C1-D.jpg" alt="Miniatura">Investigação - $100</button></td>
+                    <td><button onclick="showPaymentPopup('Números de Telefone - $50')"><img src="https://i.ibb.co/kcd0kx6/71-B3-CF0-E-7-B9-A-490-E-BE14-DF340-B217-C1-D.jpg" alt="Miniatura">Números de Telefone - $50</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="showMethodMessage()"><img src="https://i.ibb.co/kcd0kx6/71-B3-CF0-E-7-B9-A-490-E-BE14-DF340-B217-C1-D.jpg" alt="Miniatura">Métodos</button></td>
+                    <td><button onclick="showUnavailableMessage('CC')"><img src="https://i.ibb.co/kcd0kx6/71-B3-CF0-E-7-B9-A-490-E-BE14-DF340-B217-C1-D.jpg" alt="Miniatura">CC</button></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button onclick="showUnavailableMessage('Painéis')"><img src="https://i.ibb.co/kcd0kx6/71-B3-CF0-E-7-B9-A-490-E-BE14-DF340-B217-C1-D.jpg" alt="Miniatura">Painéis</button></td>
+                </tr>
+            </table>
         </div>
         <div class="contact-container">
             <img src="https://i.ibb.co/fNHPWpt/38968-CA1-D058-4-DB7-BA35-D81-D9-EF80-E1-B.png" alt="Profile Image">
             <a class="contact-link" href="https://wa.me/5587991210683">Contato no WhatsApp</a>
         </div>
-        <p class="bio">Haverá novas atualizações em breve</p>
+        <p class="bio">Novas atualizações em breve</p>
+        <div class="footer">
+            <p>Copyright © 2024-2025 Russokkj ios. Todos os direitos reservados.</p>
+        </div>
     </div>
     <div id="paymentPopup" class="payment-popup">
         <img src="https://i.ibb.co/fNHPWpt/38968-CA1-D058-4-DB7-BA35-D81-D9-EF80-E1-B.png" alt="Pix QR Code">
         <p>Pague usando a chave Pix: anonymoumundial@gmail.com</p>
-        <p id="countdown">Expira em 59 minutos</p>
+        <p id="countdown">Expira em 39 minutos</p>
         <button onclick="hidePaymentPopup()">Fechar</button>
     </div>
 
@@ -187,7 +220,7 @@
         function showPaymentPopup(service) {
             const popup = document.getElementById('paymentPopup');
             const countdownElement = document.getElementById('countdown');
-            const expirationTime = new Date().getTime() + 59 * 60 * 1000;
+            const expirationTime = new Date().getTime() + 39 * 60 * 1000;
 
             popup.style.display = 'block';
             updateCountdown(expirationTime, countdownElement);
@@ -208,19 +241,4 @@
             const distance = expirationTime - now;
 
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            countdownElement.textContent = `Expira em ${minutes}m ${seconds}s`;
-
-            if (distance < 0) {
-                clearInterval(countdownInterval);
-                countdownElement.textContent = 'A chave Pix expirou';
-            }
-        }
-
-        function showMethodMessage() {
-            alert("Para saber mais sobre os métodos, entre em contato pelo WhatsApp.");
-        }
-    </script>
-</body>
-</html>
+            const seconds = Math.floor((distance % [_{{{CITATION{{{_1{](https://github.com/lgfranco22/blog/tree/2ff765f5547038ea91aa40671858d9fd9d5ffb28/entrar.php)
