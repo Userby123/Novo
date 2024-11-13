@@ -85,6 +85,7 @@
             animation: clickEffect 0.2s;
             font-size: 16px;
             box-shadow: 0 0 10px 0 #00f; /* LED azul ao redor */
+            transition: transform 0.2s ease-in-out; /* Adicionado para animação suave */
         }
 
         .options button img {
@@ -190,11 +191,13 @@
                     <td><button onclick="showPaymentPopup('Números de Telefone - $50')"><img src="https://i.ibb.co/kcd0kx6/71-B3-CF0-E-7-B9-A-490-E-BE14-DF340-B217-C1-D.jpg" alt="Miniatura">Números de Telefone - $50</button></td>
                 </tr>
                 <tr>
-                    <td><button onclick="showMethodMessage()"><img src="https://i.ibb.co/kcd0kx6/71-B3-CF0-E-7-B9-A-490-E-BE14-DF340-B217-C1-D.jpg" alt="Miniatura">Métodos</button></td>
-                    <td><button onclick="showUnavailableMessage('CC')"><img src="https://i.ibb.co/kcd0kx6/71-B3-CF0-E-7-B9-A-490-E-BE14-DF340-B217-C1-D.jpg" alt="Miniatura">CC</button></td>
+                    <td colspan="2"><button onclick="showUnavailableMessage('Painéis')"><img src="https://i.ibb.co/kcd0kx6/71-B3-CF0-E-7-B9-A-490-E-BE14-DF340-B217-C1-D.jpg" alt="Miniatura">Painéis</button></td>
                 </tr>
                 <tr>
-                    <td colspan="2"><button onclick="showUnavailableMessage('Painéis')"><img src="https://i.ibb.co/kcd0kx6/71-B3-CF0-E-7-B9-A-490-E-BE14-DF340-B217-C1-D.jpg" alt="Miniatura">Painéis</button></td>
+                    <td colspan="2"><button onclick="showUnavailableMessage('CC')"><img src="https://i.ibb.co/kcd0kx6/71-B3-CF0-E-7-B9-A-490-E-BE14-DF340-B217-C1-D.jpg" alt="Miniatura">CC</button></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button onclick="showMethodMessage()"><img src="https://i.ibb.co/kcd0kx6/71-B3-CF0-E-7-B9-A-490-E-BE14-DF340-B217-C1-D.jpg" alt="Miniatura">Métodos</button></td>
                 </tr>
             </table>
         </div>
@@ -227,6 +230,9 @@
             
             countdownInterval = setInterval(() => {
                 updateCountdown(expirationTime, countdownElement);
+                if (expirationTime - new Date().getTime() <= 0) {
+                    hidePaymentPopup();
+                }
             }, 1000);
         }
 
@@ -236,9 +242,4 @@
             clearInterval(countdownInterval);
         }
 
-        function updateCountdown(expirationTime, countdownElement) {
-            const now = new Date().getTime();
-            const distance = expirationTime - now;
-
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % [_{{{CITATION{{{_1{](https://github.com/lgfranco22/blog/tree/2ff765f5547038ea91aa40671858d9fd9d5ffb28/entrar.php)
+        function update[_{{{CITATION{{{_1{](https://github.com/lgfranco22/blog/tree/2ff765f5547038ea91aa40671858d9fd9d5ffb28/entrar.php)
