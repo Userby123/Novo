@@ -19,11 +19,26 @@
             100% { transform: scale(1); }
         }
 
+        @keyframes glow {
+            0% { box-shadow: 0 0 5px blue; }
+            25% { box-shadow: 0 0 20px red; }
+            50% { box-shadow: 0 0 15px yellow; }
+            75% { box-shadow: 0 0 20px white; }
+            100% { box-shadow: 0 0 5px orange; }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+
         body {
             font-family: Arial, sans-serif;
-            background-color: #000; /* Fundo preto */
+            background-color: #000000; /* Fundo preto */
             color: white;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -31,10 +46,6 @@
         }
 
         .container {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
             text-align: center;
             padding: 20px;
             border-radius: 8px;
@@ -47,7 +58,7 @@
 
         .username {
             font-size: 36px;
-            margin-bottom: 5px; /* Reduzi o espaçamento para aproximar a imagem do nome */
+            margin-bottom: 10px;
         }
 
         .bio {
@@ -55,60 +66,58 @@
             margin-top: 10px;
         }
 
-        .options {
+        .profile-contact {
             display: flex;
-            justify-content: space-between;
-            margin: 10px 0;
-            flex-wrap: wrap;
-        }
-
-        .options table {
-            width: 100%;
-        }
-
-        .options td {
-            padding: 10px;
-        }
-
-        .options button {
-            display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 10px;
-            background-color: #000; /* Botões pretos */
-            color: white;
-            cursor: pointer;
-            position: relative;
-            animation: clickEffect 0.2s;
-            font-size: 16px;
-            box-shadow: 0 0 10px 0 #00f; /* LED azul ao redor */
-            transition: transform 0.2s ease-in-out; /* Adicionado para animação suave */
-        }
-
-        .options button img {
-            margin-right: 10px;
-            width: 30px; /* Miniatura maior */
-        }
-
-        .options button:hover {
-            background-color: #222;
-        }
-
-        .contact-container {
-            display: flex;
-            align-items: center;
-            margin-top: 20px;
+            margin-bottom: 20px;
         }
 
         .contact-container img {
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
+            border-radius: 50%; /* Faz a imagem ser redonda */
+            width: 100px;
+            height: 100px;
+            margin-right: 0;
             border: 2px solid;
+            animation: glow 5s infinite; /* Adiciona o brilho girando ao redor */
+        }
+
+        .floating-image {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            animation: float 6s infinite;
+            cursor: pointer;
+            border: 2px solid;
+            animation: glow 5s infinite;
+        }
+
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        .options button {
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #555;
+            color: white;
+            cursor: pointer;
+            position: relative;
+            flex: 1 1 45%; /* Duas colunas */
+        }
+
+        .options button:hover {
+            background-color: #777;
+        }
+
+        .options button:active {
+            animation: clickEffect 0.2s;
         }
 
         .contact-link {
@@ -118,8 +127,9 @@
             color: white;
             border-radius: 5px;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 18px;
             border: 2px solid;
+            margin-top: 10px;
         }
 
         .contact-link:hover {
@@ -181,29 +191,18 @@
 </head>
 <body>
     <div class="container">
-        <img src="https://i.ibb.co/vspCWVC/EAA0-DB6-F-3258-4-B85-A729-43339-BBD4-AAC.jpg" alt="Profile Image" width="80">
+        <div class="profile-contact">
+            <img src="https://i.ibb.co/fNHPWpt/38968-CA1-D058-4-DB7-BA35-D81-D9-EF80-E1-B.png" alt="Profile Image">
+            <a class="contact-link" href="https://wa.me/5587991210683">Contato no WhatsApp</a>
+        </div>
         <h1 class="username">Userby</h1>
         <p class="bio">Fornecimento e Vendas</p>
         <div class="options">
-            <table>
-                <tr>
-                    <td><button onclick="showPaymentPopup('Investigação - $100')"><img src="https://i.ibb.co/kcd0kx6/71-B3-CF0-E-7-B9-A-490-E-BE14-DF340-B217-C1-D.jpg" alt="Miniatura">Investigação - $100</button></td>
-                    <td><button onclick="showPaymentPopup('Números de Telefone - $50')"><img src="https://i.ibb.co/kcd0kx6/71-B3-CF0-E-7-B9-A-490-E-BE14-DF340-B217-C1-D.jpg" alt="Miniatura">Números de Telefone - $50</button></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><button onclick="showUnavailableMessage('Painéis')"><img src="https://i.ibb.co/kcd0kx6/71-B3-CF0-E-7-B9-A-490-E-BE14-DF340-B217-C1-D.jpg" alt="Miniatura">Painéis</button></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><button onclick="showUnavailableMessage('CC')"><img src="https://i.ibb.co/kcd0kx6/71-B3-CF0-E-7-B9-A-490-E-BE14-DF340-B217-C1-D.jpg" alt="Miniatura">CC</button></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><button onclick="showMethodMessage()"><img src="https://i.ibb.co/kcd0kx6/71-B3-CF0-E-7-B9-A-490-E-BE14-DF340-B217-C1-D.jpg" alt="Miniatura">Métodos</button></td>
-                </tr>
-            </table>
-        </div>
-        <div class="contact-container">
-            <img src="https://i.ibb.co/fNHPWpt/38968-CA1-D058-4-DB7-BA35-D81-D9-EF80-E1-B.png" alt="Profile Image">
-            <a class="contact-link" href="https://wa.me/5587991210683">Contato no WhatsApp</a>
+            <button onclick="showPaymentPopup('Investigação - $100')">Investigação - $100</button>
+            <button onclick="showPaymentPopup('Números de Telefone - $50')">Números de Telefone - $50</button>
+            <button onclick="showUnavailableMessage('Painéis')">Painéis</button>
+            <button onclick="showUnavailableMessage('CC')">CC</button>
+            <button onclick="showMethodMessage()">Métodos</button>
         </div>
         <p class="bio">Novas atualizações em breve</p>
         <div class="footer">
@@ -219,6 +218,23 @@
 
     <script>
         let countdownInterval;
+        const floatingImages = [
+            "https://i.ibb.co/hY22wMR/B5-F7-D02-D-CD70-43-A0-870-E-277-A34-EC48-D8.jpg",
+            "https://i.ibb.co/DtRLRvy/EAFDB7-CB-DEFC-467-A-B293-1087-C85-A0256.jpg",
+            "https://i.ibb.co/CQHc033/FB9-F9-BE8-BADB-431-F-93-F3-B2-C495-C9-E29-B.jpg",
+            "https://i.ibb.co/kcd0kx6/71-B3-CF0-E-7-B9-A-490-E-BE14-DF340-B217-C1-D.jpg",
+            "https://i.ibb.co/xG3LxFT/544967-C5-1-D2-D-4078-910-D-97-E63-CAFD531.jpg"
+        ];
+
+        function createFloatingImage(src) {
+            const img = document.createElement("img");
+            img.src = src;
+            img.className = "floating-image";
+            img.style.left = `${Math.random() * 100}%`;
+            img.style.top = `${Math.random() * 100}%`;
+            img.onclick = () => window.location.href = "https://www.4chan.org";
+            document.body.appendChild(img);
+        }
 
         function showPaymentPopup(service) {
             const popup = document.getElementById('paymentPopup');
@@ -232,14 +248,4 @@
                 updateCountdown(expirationTime, countdownElement);
                 if (expirationTime - new Date().getTime() <= 0) {
                     hidePaymentPopup();
-                }
-            }, 1000);
-        }
-
-        function hidePaymentPopup() {
-            const popup = document.getElementById('paymentPopup');
-            popup.style.display = 'none';
-            clearInterval(countdownInterval);
-        }
-
-        function update[_{{{CITATION{{{_1{](https://github.com/lgfranco22/blog/tree/2ff765f5547038ea91aa40671858d9fd9d5ffb28/entrar.php)
+[_{{{CITATION{{{_1{](https://github.com/lgfranco22/blog/tree/2ff765f5547038ea91aa40671858d9fd9d5ffb28/entrar.php)
