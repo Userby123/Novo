@@ -3,220 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil de Userby</title>
+    <title>Surface</title>
     <style>
-        @keyframes colorChange {
-            0% { transform: scale(0.95); }
-            100% { transform: scale(1); }
-        }
-        @keyframes glow {
-            0% { box-shadow: 0 0 5px blue; }
-            25% { box-shadow: 0 0 20px red; }
-            50% { box-shadow: 0 0 15px yellow; }
-            75% { box-shadow: 0 0 20px white; }
-            100% { box-shadow: 0 0 5px orange; }
-        }
         body {
             font-family: Arial, sans-serif;
-            background: url('https://i.postimg.cc/JGTFV78R/531-EB30-A-DCBB-478-F-9-D65-67-E2-E67-BD3-FC.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
             margin: 0;
-            filter: brightness(1.2);
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #000;
+            color: #fff;
         }
-        .container {
-            width: 90%;
-            max-width: 1400px;
-            text-align: center;
-            padding: 20px;
-            border-radius: 8px;
-            background-color: rgba(51, 51, 51, 0.8);
-            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
-        }
-        .username, .bio, .footer p, .contact-link, .options button, .audio-container {
-            animation: colorChange 5s infinite;
-        }
-        .username {
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
-        .bio {
-            font-size: 18px; /* Diminuído o tamanho do texto */
-            margin-top: 10px;
-        }
-        .profile-contact {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .profile-contact img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            margin-right: 0;
-            border: 2px solid;
-            animation: glow 5s infinite;
-        }
-        .options {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin: 10px 0;
-        }
-        .options button {
-            padding: 10px;
-            margin: 5px;
-            border: none;
-            border-radius: 5px;
-            background-color: #555;
+
+        header {
+            background-color: #1c1c1c;
             color: white;
-            cursor: pointer;
-            position: relative;
-            flex: 1 1 45%;
-            animation: glow 5s infinite;
-        }
-        .options button:hover {
-            background-color: #777;
-        }
-        .options button:active {
-            animation: clickEffect 0.2s;
-        }
-        .contact-link {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #555;
-            color: green;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 18px;
-            border: 2px solid;
-            margin-top: 10px;
-            animation: glow 5s infinite;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .contact-link img {
-            width: 24px;
-            height: 24px;
-            margin-right: 8px;
-        }
-        .contact-link:hover {
-            background-color: #777;
-        }
-        .payment-popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #444;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            padding: 10px 0;
             text-align: center;
         }
-        .payment-popup img {
+
+        header img.led-image {
             width: 100px;
-            height: auto;
+            height: 100px;
+            border-radius: 50%;
+            border: 5px solid;
+            border-color: red blue white;
+            animation: rotate 2s linear infinite;
         }
-        .payment-popup p {
-            margin: 10px 0;
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
         }
-        .payment-popup button {
-            padding: 10px;
-            background-color: #555;
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
             color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            text-decoration: none;
         }
-        .audio-container {
-            margin-top: 20px;
+
+        main {
+            padding: 20px;
+        }
+
+        .profile {
+            border: 1px solid #444;
             padding: 10px;
-            background-color: #222;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid;
-            animation: colorChange 5s infinite;
+            margin: 10px 0;
+            text-align: center;
+            background-color: #333;
         }
-        .audio-container audio {
-            width: 90%;
+
+        .profile img.profile-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            animation: led-colors 3s infinite;
         }
-        .footer {
-            margin-top: 20px;
-            font-size: 12px;
+
+        @keyframes led-colors {
+            0% { border-color: red; }
+            33% { border-color: blue; }
+            66% { border-color: green; }
+            100% { border-color: red; }
         }
+
+        .profile h2, .profile p {
+            animation: led-blue 1s infinite;
+            font-size: 18px; /* Nomes dos cartões um pouco menores */
+        }
+
+        @keyframes led-blue {
+            0%, 100% { color: blue; }
+            50% { color: #fff; }
+        }
+
+        .profile a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .profile a:hover {
+            text-decoration: underline;
+        }
+
+        .profile img.telegram-logo {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%; /* Logotipo do Telegram redonda */
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+
+        .red-text {
+            color: red;
+        }
+
+        .animated-text {
+            animation: led-colors-text 3s infinite;
+            font-size: 20px;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        @keyframes led-colors-text {
+            0% { color: red; }
+            33% { color: blue; }
+            66% { color: green; }
+            100% { color: red; }
+        }
+
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="profile-contact">
-            <img src="https://i.ibb.co/fNHPWpt/38968-CA1-D058-4-DB7-BA35-D81-D9-EF80-E1-B.png" alt="Profile Image">
-            <a class="contact-link" href="https://wa.me/5587991210683">
-                <img src="https://i.postimg.cc/qzKnsj7y/56-F47-C2-A-C383-4176-853-C-68-B93-C6-C38-D8.jpg" alt="WhatsApp Logo"> WhatsApp
-            </a>
-        </div>
-        <h1 class="username">Userby</h1>
-        <div class="options">
-            <button onclick="showPaymentPopup('Investigação - $100')">Investigação - $100</button>
-            <button onclick="showPaymentPopup('Números de Telefone - $50')">Números de Telefone - $50</button>
-            <button onclick="showUnavailableMessage('Painéis')">Painéis</button>
-            <button onclick="showUnavailableMessage('CC')">CC</button>
-            <button onclick="showMethodMessage()">Métodos</button>
-        </div>
-        <p class="bio">Novas atualizações em breve</p>
-        <div class="footer">
-            <p>Copyright © 2024-2025 Russokkj ios. Todos os direitos reservados.</p>
-        </div>
-    </div>
-    <div id="paymentPopup" class="payment-popup">
-        <img src="https://i.ibb.co/fNHPWpt/38968-CA1-D058-4-DB7-BA35-D81-D9-EF80-E1-B.png" alt="Pix QR Code">
-        <p>Pague usando a chave Pix: anonymoumundial@gmail.com</p>
-        <p id="countdown">Expira em 39 minutos</p>
-        <button onclick="hidePaymentPopup()">Fechar</button>
-    </div>
-    <script>
-        let countdownInterval;
-        function showPaymentPopup(service) {
-            const popup = document.getElementById('paymentPopup');
-            const countdownElement = document.getElementById('countdown');
-            const expirationTime = new Date().getTime() + 39 * 60 * 1000;
-            popup.style.display = 'block';
-            updateCountdown(expirationTime, countdownElement);
-            countdownInterval = setInterval(() => {
-                updateCountdown(expirationTime, countdownElement);
-                if (expirationTime - new Date().getTime() <= 0) {
-                    hidePaymentPopup();
-                }
-            }, 1000);
-        }
-        function hidePaymentPopup() {
-            const popup = document.getElementById('paymentPopup');
-            popup.style.display = 'none';
-            clearInterval(countdownInterval);
-        }
-        function updateCountdown(expirationTime, countdownElement) {
-            const now = new Date().getTime();
-            const distance = expirationTime - now;
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            countdownElement.innerHTML = `Expira em ${minutes} minutos e ${seconds} segundos`;
-        }
-        function showUnavailableMessage(service) {
-            alert(service + " indisponível");
-        }
-        function showMethodMessage() {
-            alert("A ser questionado na rede social");
-        }
-    </script>
+    <header>
+        <h1>Surface./𝝅</h1>
+        <img src="https://i.postimg.cc/4KRgSvVD/E672-A139-41-FA-4032-885-F-776-C2-DD55494.jpg" alt="Imagem com LEDs" class="led-image">
+        <p class="red-text">se tem problema com nois, vem resolver! chama minha mãe lá!</p>
+        <nav>
+            <ul>
+                <li><a href="#">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="profile">
+            <h2><a href="https://t.me/receitadocrime">N1sheyk Surface./𝝅<img src="https://i.postimg.cc/F7NzzLRg/ECCA95-BD-7-AD5-4-C85-9-EC7-8-E3189-DD1693.jpg" alt="Telegram" class="telegram-logo"></a></h2>
+            <img src="https://i.postimg.cc/CRyXhh5D/70-E0-A86-B-4-F7-C-4722-B706-D5-DF70-A3-E95-B.jpg" alt="N1sheyk Surface" class="profile-image">
+            <p>A Fúria</p>
+        </section>
+        <section class="profile">
+            <h2><a href="https://t.me/imitavel">Crïzen Surface./𝝅<img src="https://i.postimg.cc/F7NzzLRg/ECCA95-BD-7-AD5-4-C85-9-EC7-8-E3189-DD1693.jpg" alt="Telegram" class="telegram-logo"></a></h2>
+            <img src="https://i.postimg.cc/Jy59Yf1X/AB0-C3-E68-A24-C-4-EDA-9016-F7-F64-FADC8-A3.jpg" alt="Crïzen Surface" class="profile-image">
+            <p>O Ego</p>
+        </section>
+        <section class="profile">
+            <h2><a href="https://t.me/desclassificado">Yush Surface./𝝅<img src="https://i.postimg.cc/F7NzzLRg/ECCA95-BD-7-AD5-4-C85-9-EC7-8-E3189-DD1693.jpg" alt="Telegram" class="telegram-logo"></a></h2>
+            <img src="https://i.postimg.cc/bDvFCdVX/E6753-C3-B-C547-4-BB8-A7-ED-A5-A6-D9-DEABB5.jpg" alt="Yush Surface" class="profile-image">
+            <p>A Luxúria</p>
+        </section>
+        <section class="profile">
+            <h2><a href="https://t.me/userby999">userby surface./𝝅<img src="https://i.postimg.cc/F7NzzLRg/ECCA95-BD-7-AD5-4-C85-9-EC7-8-E3189-DD1693.jpg" alt="Telegram" class="telegram-logo"></a></h2>
+            <img src="https://i.postimg.cc/LgYQSwMN/3-BEB01-A0-4530-49-F4-BA6-D-BB71-F6-B5-FF85.jpg" alt="userby surface" class="profile-image">
+            <p>A Vingança</p>
+        </section>
+        <section class="profile">
+            <h2><a href="https://t.me/intectualista">Goldzzk7 Surface./𝝅<img src="https://i.postimg.cc/F7NzzLRg/ECCA95-BD-7-AD5-4-C85-9-EC7-8-E3189-DD1693.jpg" alt="Telegram" class="telegram-logo"></a></h2>
+            <img src="https://i.postimg.cc/Vrv93hyv/4-AE233-EE-83-A4-40-E9-95-E7-AC436-E4625-DE.jpg" alt="Goldzzk7 Surface" class="profile-image">
+            <p>A Cobiça</p>
+        </section>
+    </main>
 </body>
 </html>
