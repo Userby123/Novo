@@ -1,21 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serviços Userby</title>
+    <title>Perfil de Userby</title>
     <style>
         @keyframes colorChange {
-            0% { color: blue; }
-            25% { color: red; }
-            50% { color: yellow; }
-            75% { color: white; }
-            100% { color: orange; }
-        }
-
-        @keyframes clickEffect {
-            0% { transform: scale(1); }
-            50% { transform: scale(0.95); }
+            0% { transform: scale(0.95); }
             100% { transform: scale(1); }
         }
 
@@ -28,30 +19,33 @@
         }
 
         @keyframes ledGlow {
-            0% { box-shadow: 0 0 10px 5px blue; }
-            25% { box-shadow: 0 0 20px 10px red; }
-            50% { box-shadow: 0 0 30px 15px yellow; }
-            75% { box-shadow: 0 0 40px 20px white; }
-            100% { box-shadow: 0 0 10px 5px orange; }
+            0% { box-shadow: 0 0 5px #00ff00; }
+            50% { box-shadow: 0 0 20px #00ff00; }
+            100% { box-shadow: 0 0 5px #00ff00; }
         }
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #000000; /* Fundo preto */
+            background: url('https://i.postimg.cc/sMMhfzBY/7-E77-BFD9-DCEB-4-C99-B0-C7-24-FD2943-EDAA.jpg') no-repeat center center fixed;
+            background-size: cover;
             color: white;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
+            filter: brightness(1.2);
         }
 
         .container {
+            width: 90%;
+            max-width: 1400px;
             text-align: center;
             padding: 20px;
             border-radius: 8px;
-            background-color: #333;
+            background-color: rgba(51, 51, 51, 0.8);
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
         }
 
         .username, .bio, .footer p, .contact-link, .options button, .audio-container {
@@ -77,11 +71,11 @@
 
         .profile-contact img {
             border-radius: 50%;
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
             margin-right: 0;
             border: 2px solid;
-            animation: ledGlow 5s infinite; /* Brilho em torno da miniatura */
+            animation: glow 5s infinite;
         }
 
         .options {
@@ -100,7 +94,10 @@
             color: white;
             cursor: pointer;
             position: relative;
-            flex: 1 1 45%; /* Duas colunas */
+            flex: 1 1 45%;
+            animation: ledGlow 2s infinite;
+            display: flex;
+            align-items: center;
         }
 
         .options button:hover {
@@ -111,16 +108,34 @@
             animation: clickEffect 0.2s;
         }
 
+        .options img {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+            vertical-align: middle;
+            border-radius: 50%;
+        }
+
         .contact-link {
             display: inline-block;
             padding: 10px 20px;
             background-color: #555;
-            color: white;
+            color: green;
             border-radius: 5px;
             text-decoration: none;
             font-size: 18px;
             border: 2px solid;
             margin-top: 10px;
+            animation: glow 5s infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-link img {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
         }
 
         .contact-link:hover {
@@ -184,16 +199,34 @@
     <div class="container">
         <div class="profile-contact">
             <img src="https://i.ibb.co/fNHPWpt/38968-CA1-D058-4-DB7-BA35-D81-D9-EF80-E1-B.png" alt="Profile Image">
-            <a class="contact-link" href="https://wa.me/5587991210683">Contato no WhatsApp</a>
+            <a class="contact-link" href="https://wa.me/5587991210683">
+                <img src="https://i.postimg.cc/qzKnsj7y/56-F47-C2-A-C383-4176-853-C-68-B93-C6-C38-D8.jpg" alt="WhatsApp Logo">
+                WhatsApp
+            </a>
         </div>
         <h1 class="username">Userby</h1>
         <p class="bio">Fornecimento e Vendas</p>
         <div class="options">
-            <button onclick="showPaymentPopup('Investigação - $100')">Investigação - $100</button>
-            <button onclick="showPaymentPopup('Números de Telefone - $50')">Números de Telefone - $50</button>
-            <button onclick="showUnavailableMessage('Painéis')">Painéis</button>
-            <button onclick="showUnavailableMessage('CC')">CC</button>
-            <button onclick="showMethodMessage()">Métodos</button>
+            <button onclick="showPaymentPopup('Investigação - $100')">
+                <img src="https://i.postimg.cc/1gxh2R0f/719-E3-A2-D-DA4-C-41-B5-BEEA-54-DD4-E15-FA3-C.jpg" alt="Investigação Logo">
+                Investigação - $100
+            </button>
+            <button onclick="showPaymentPopup('Números de Telefone - $50')">
+                <img src="https://i.postimg.cc/4mJCRFhQ/201-C9594-2-DBC-4-BE3-B575-2387-D7797993.jpg" alt="Números de Telefone Logo">
+                Números de Telefone - $50
+            </button>
+            <button onclick="showUnavailableMessage('Painéis')">
+                <img src="https://i.postimg.cc/QHr89bKF/0-D43-FA5-B-26-AA-449-D-8-C14-5-F51-F3-CADF3-C.jpg" alt="Painéis Logo">
+                Painéis
+            </button>
+            <button onclick="showUnavailableMessage('CC')">
+                <img src="https://i.postimg.cc/7CcDxMyY/88-D5-C018-F699-40-A4-BB16-A9-D03611-E204.png" alt="CC Logo">
+                CC
+            </button>
+            <button onclick="showMethodMessage()">
+                <img src="https://i.postimg.cc/ZWbJj5cZ/33697-B11-AC04-498-E-8-FFB-B473530-F1452.jpg" alt="Métodos Logo">
+                Métodos
+            </button>
         </div>
         <p class="bio">Novas atualizações em breve</p>
         <div class="footer">
@@ -204,51 +237,4 @@
         <img src="https://i.ibb.co/fNHPWpt/38968-CA1-D058-4-DB7-BA35-D81-D9-EF80-E1-B.png" alt="Pix QR Code">
         <p>Pague usando a chave Pix: anonymoumundial@gmail.com</p>
         <p id="countdown">Expira em 39 minutos</p>
-        <button onclick="hidePaymentPopup()">Fechar</button>
-    </div>
-
-    <script>
-        let countdownInterval;
-
-        function showPaymentPopup(service) {
-            const popup = document.getElementById('paymentPopup');
-            const countdownElement = document.getElementById('countdown');
-            const expirationTime = new Date().getTime() + 39 * 60 * 1000;
-
-            popup.style.display = 'block';
-            updateCountdown(expirationTime, countdownElement);
-            
-            countdownInterval = setInterval(() => {
-                updateCountdown(expirationTime, countdownElement);
-                if (expirationTime - new Date().getTime() <= 0) {
-                    hidePaymentPopup();
-                }
-            }, 1000);
-        }
-
-        function hidePaymentPopup() {
-            const popup = document.getElementById('paymentPopup');
-            popup.style.display = 'none';
-            clearInterval(countdownInterval);
-        }
-
-        function updateCountdown(expirationTime, countdownElement) {
-            const now = new Date().getTime();
-            const distance = expirationTime - now;
-
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            countdownElement.innerHTML = `Expira em ${minutes} minutos e ${seconds} segundos`;
-        }
-
-        function showUnavailableMessage(service) {
-            alert(service + " indisponível");
-        }
-
-        function showMethodMessage() {
-            alert("A ser questionado na rede social");
-        }
-    </script>
-</body>
-</html>
+        <button onclick="hidePaymentPopup()">Fechar</button[_{{{CITATION{{{_1{](https://github.com/ricardo-cas/pandas/tree/eefd8f3ed9250c15e029b7ae59a24ef9f7ffc4ab/GUIA_MARKDOWN.MD)
