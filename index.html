@@ -10,12 +10,15 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background-color: #000;
+            background-image: url('https://i.postimg.cc/z3HScNjR/A108484-C-8-E8-C-407-F-A002-1-C98-E44-B14-F5.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             color: #fff;
         }
 
         header {
-            background-color: #1c1c1c;
+            background-color: rgba(28, 28, 28, 0.8);
             color: white;
             padding: 10px 0;
             text-align: center;
@@ -42,6 +45,7 @@
         nav ul {
             list-style-type: none;
             padding: 0;
+            text-align: center;
         }
 
         nav ul li {
@@ -56,6 +60,7 @@
 
         main {
             padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
         }
 
         .profile {
@@ -63,7 +68,7 @@
             padding: 10px;
             margin: 10px 0;
             text-align: center;
-            background-color: #333;
+            background-color: rgba(51, 51, 51, 0.8);
         }
 
         .profile img.profile-image {
@@ -81,12 +86,12 @@
         }
 
         .profile h2, .profile p {
-            animation: led-blue 1s infinite;
+            animation: led-red 1s infinite;
             font-size: 18px; /* Nomes dos cartões um pouco menores */
         }
 
-        @keyframes led-blue {
-            0%, 100% { color: blue; }
+        @keyframes led-red {
+            0%, 100% { color: red; }
             50% { color: #fff; }
         }
 
@@ -110,29 +115,15 @@
         .red-text {
             color: red;
         }
-
-        .animated-text {
-            animation: led-colors-text 3s infinite;
-            font-size: 20px;
-            text-align: center;
-            padding: 10px 0;
-        }
-
-        @keyframes led-colors-text {
-            0% { color: red; }
-            33% { color: blue; }
-            66% { color: green; }
-            100% { color: red; }
-        }
-
     </style>
 </head>
 <body>
     <header>
-        <h1>Surface./𝝅</h1>
+        <h1>Surface</h1>
         <img src="https://i.postimg.cc/4KRgSvVD/E672-A139-41-FA-4032-885-F-776-C2-DD55494.jpg" alt="Imagem com LEDs" class="led-image">
-        <p class="red-text">se tem problema com nois, vem resolver! chama minha mãe lá!</p>
-        <nav>
+        <p class="red-text">se tem problema com nois, vem resolver!</p>
+ 
+     <nav>
             <ul>
                 <li><a href="#">Sobre</a></li>
             </ul>
@@ -140,29 +131,39 @@
     </header>
     <main>
         <section class="profile">
-            <h2><a href="https://t.me/receitadocrime">N1sheyk Surface./𝝅<img src="https://i.postimg.cc/F7NzzLRg/ECCA95-BD-7-AD5-4-C85-9-EC7-8-E3189-DD1693.jpg" alt="Telegram" class="telegram-logo"></a></h2>
-            <img src="https://i.postimg.cc/CRyXhh5D/70-E0-A86-B-4-F7-C-4722-B706-D5-DF70-A3-E95-B.jpg" alt="N1sheyk Surface" class="profile-image">
-            <p>A Fúria</p>
+            <h2><a href="https://t.me/receitadocrime">Cassius Surface./𝝅<img src="https://i.postimg.cc/F7NzzLRg/ECCA95-BD-7-AD5-4-C85-9-EC7-8-E3189-DD1693.jpg" alt="Telegram" class="telegram-logo"></a></h2>
+            <img src="https://i.postimg.cc/CRyXhh5D/70-E0-A86-B-4-F7-C-4722-B706-D5-DF70-A3-E95-B.jpg" alt="Cassius Surface" class="profile-image">
+            <p class="static-led">A Fúria</p>
         </section>
         <section class="profile">
             <h2><a href="https://t.me/imitavel">Crïzen Surface./𝝅<img src="https://i.postimg.cc/F7NzzLRg/ECCA95-BD-7-AD5-4-C85-9-EC7-8-E3189-DD1693.jpg" alt="Telegram" class="telegram-logo"></a></h2>
             <img src="https://i.postimg.cc/Jy59Yf1X/AB0-C3-E68-A24-C-4-EDA-9016-F7-F64-FADC8-A3.jpg" alt="Crïzen Surface" class="profile-image">
-            <p>O Ego</p>
+            <p class="static-led">O Ego</p>
         </section>
         <section class="profile">
             <h2><a href="https://t.me/desclassificado">Yush Surface./𝝅<img src="https://i.postimg.cc/F7NzzLRg/ECCA95-BD-7-AD5-4-C85-9-EC7-8-E3189-DD1693.jpg" alt="Telegram" class="telegram-logo"></a></h2>
             <img src="https://i.postimg.cc/bDvFCdVX/E6753-C3-B-C547-4-BB8-A7-ED-A5-A6-D9-DEABB5.jpg" alt="Yush Surface" class="profile-image">
-            <p>A Luxúria</p>
+            <p class="static-led">A Luxúria</p>
         </section>
         <section class="profile">
             <h2><a href="https://t.me/userby999">userby surface./𝝅<img src="https://i.postimg.cc/F7NzzLRg/ECCA95-BD-7-AD5-4-C85-9-EC7-8-E3189-DD1693.jpg" alt="Telegram" class="telegram-logo"></a></h2>
             <img src="https://i.postimg.cc/LgYQSwMN/3-BEB01-A0-4530-49-F4-BA6-D-BB71-F6-B5-FF85.jpg" alt="userby surface" class="profile-image">
-            <p>A Vingança</p>
+            <p class="static-led">A Vingança</p>
         </section>
         <section class="profile">
             <h2><a href="https://t.me/intectualista">Goldzzk7 Surface./𝝅<img src="https://i.postimg.cc/F7NzzLRg/ECCA95-BD-7-AD5-4-C85-9-EC7-8-E3189-DD1693.jpg" alt="Telegram" class="telegram-logo"></a></h2>
             <img src="https://i.postimg.cc/Vrv93hyv/4-AE233-EE-83-A4-40-E9-95-E7-AC436-E4625-DE.jpg" alt="Goldzzk7 Surface" class="profile-image">
-            <p>A Cobiça</p>
+            <p class="static-led">A Cobiça</p>
+        </section>
+        <section class="profile">
+            <h2><a href="https://t.me/tribunaldocrime999">Pg Surface./𝝅<img src="https://i.postimg.cc/F7NzzLRg/ECCA95-BD-7-AD5-4-C85-9-EC7-8-E3189-DD1693.jpg" alt="Telegram" class="telegram-logo"></a></h2>
+            <img src="https://i.postimg.cc/HVyf9FRp/2011200-F-35-B7-40-D4-B22-B-7-D8-C37-C07267.jpg" alt="Pg Surface" class="profile-image">
+            <p class="static-led">A Justiça</p>
+        </section>
+        <section class="profile">
+            <h2><a href="https://t.me/some-profile">NeedX surface./𝝅<img src="https://i.postimg.cc/F7NzzLRg/ECCA95-BD-7-AD5-4-C85-9-EC7-8-E3189-DD1693.jpg" alt="Telegram" class="telegram-logo"></a></h2>
+            <img src="https://i.postimg.cc/mcCYdyR1/D02-F6176-EC91-496-D-ABDF-3982-C5-A0-BAC0.jpg" alt="NeedX surface" class="profile-image">
+            <p class="static-led">A Força</p>
         </section>
     </main>
 </body>
