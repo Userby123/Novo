@@ -1,170 +1,141 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surface</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-image: url('https://i.postimg.cc/z3HScNjR/A108484-C-8-E8-C-407-F-A002-1-C98-E44-B14-F5.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            color: #fff;
-        }
-
-        header {
-            background-color: rgba(28, 28, 28, 0.8);
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-
-        header img.led-image {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 5px solid;
-            border-color: red blue white;
-            animation: rotate 2s linear infinite;
-        }
-
-        @keyframes rotate {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            text-align: center;
-        }
-
-        nav ul li {
-            display: inline;
-            margin-right: 15px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-
-        main {
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-        .profile {
-            border: 1px solid #444;
-            padding: 10px;
-            margin: 10px 0;
-            text-align: center;
-            background-color: rgba(51, 51, 51, 0.8);
-        }
-
-        .profile img.profile-image {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            animation: led-colors 3s infinite;
-        }
-
-        @keyframes led-colors {
-            0% { border-color: red; }
-            33% { border-color: blue; }
-            66% { border-color: green; }
-            100% { border-color: red; }
-        }
-
-        .profile h2, .profile p {
-            animation: led-red 1s infinite;
-            font-size: 18px; /* Nomes dos cartões um pouco menores */
-        }
-
-        @keyframes led-red {
-            0%, 100% { color: red; }
-            50% { color: #fff; }
-        }
-
-        .profile a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .profile a:hover {
-            text-decoration: underline;
-        }
-
-        .profile img.telegram-logo {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%; /* Logotipo do Telegram redonda */
-            vertical-align: middle;
-            margin-left: 5px;
-        }
-
-        .red-text {
-            color: red;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Meu Recomeço</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: url('https://i.postimg.cc/H888rvnb/6-B16-B23-F-65-BA-44-B2-A9-D3-AE28-F11-FE93-B.jpg') no-repeat center center fixed;
+        background-size: cover;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+        margin: 0;
+    }
+    .container {
+        background: rgba(0, 0, 0, 0.7);
+        padding: 20px;
+        border-radius: 10px;
+        display: inline-block;
+        margin-top: 50px;
+    }
+    .rounded-image {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        border: 5px solid white;
+        box-shadow: 0 0 20px white;
+    }
+    .title {
+        color: red;
+        font-size: 36px;
+        text-align: center;
+        margin: 0;
+    }
+    .quote {
+        font-size: 16px;
+        color: red;
+        font-style: italic;
+        margin: 20px 0;
+    }
+    .author {
+        font-size: 14px;
+        color: white;
+        cursor: pointer;
+    }
+    .author:hover {
+        color: yellow;
+    }
+    .buttons {
+        margin-top: 20px;
+    }
+    .button {
+        background-color: black;
+        color: white;
+        padding: 10px 20px;
+        margin: 5px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    .button-back {
+        background-color: red;
+        color: black;
+    }
+    .button:hover {
+        opacity: 0.8;
+    }
+    .hidden {
+        display: none;
+    }
+    .content {
+        background-color: rgba(255, 255, 255, 0.8);
+        color: black;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: left;
+        margin-top: 10px;
+    }
+    .content a {
+        color: red;
+        text-decoration: none;
+    }
+    .content a:hover {
+        text-decoration: underline;
+    }
+    .extra {
+        font-size: 12px;
+        color: gray;
+        margin-top: 20px;
+    }
+</style>
 </head>
 <body>
-    <header>
-        <h1>Surface</h1>
-        <img src="https://i.postimg.cc/4KRgSvVD/E672-A139-41-FA-4032-885-F-776-C2-DD55494.jpg" alt="Imagem com LEDs" class="led-image">
-        <p class="red-text">se tem problema com nois, vem resolver!</p>
- 
-     <nav>
-            <ul>
-                <li><a href="#">Sobre</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="profile">
-            <h2><a href="https://t.me/receitadocrime">Cassius Surface./𝝅<img src="https://i.postimg.cc/F7NzzLRg/ECCA95-BD-7-AD5-4-C85-9-EC7-8-E3189-DD1693.jpg" alt="Telegram" class="telegram-logo"></a></h2>
-            <img src="https://i.postimg.cc/CRyXhh5D/70-E0-A86-B-4-F7-C-4722-B706-D5-DF70-A3-E95-B.jpg" alt="Cassius Surface" class="profile-image">
-            <p class="static-led">A Fúria</p>
-        </section>
-        <section class="profile">
-            <h2><a href="https://t.me/imitavel">Crïzen Surface./𝝅<img src="https://i.postimg.cc/F7NzzLRg/ECCA95-BD-7-AD5-4-C85-9-EC7-8-E3189-DD1693.jpg" alt="Telegram" class="telegram-logo"></a></h2>
-            <img src="https://i.postimg.cc/Jy59Yf1X/AB0-C3-E68-A24-C-4-EDA-9016-F7-F64-FADC8-A3.jpg" alt="Crïzen Surface" class="profile-image">
-            <p class="static-led">O Ego</p>
-        </section>
-        <section class="profile">
-            <h2><a href="https://t.me/desclassificado">Yush Surface./𝝅<img src="https://i.postimg.cc/F7NzzLRg/ECCA95-BD-7-AD5-4-C85-9-EC7-8-E3189-DD1693.jpg" alt="Telegram" class="telegram-logo"></a></h2>
-            <img src="https://i.postimg.cc/bDvFCdVX/E6753-C3-B-C547-4-BB8-A7-ED-A5-A6-D9-DEABB5.jpg" alt="Yush Surface" class="profile-image">
-            <p class="static-led">A Luxúria</p>
-        </section>
-        <section class="profile">
-            <h2><a href="https://t.me/userby999">userby surface./𝝅<img src="https://i.postimg.cc/F7NzzLRg/ECCA95-BD-7-AD5-4-C85-9-EC7-8-E3189-DD1693.jpg" alt="Telegram" class="telegram-logo"></a></h2>
-            <img src="https://i.postimg.cc/LgYQSwMN/3-BEB01-A0-4530-49-F4-BA6-D-BB71-F6-B5-FF85.jpg" alt="userby surface" class="profile-image">
-            <p class="static-led">A Vingança</p>
-        </section>
-        <section class="profile">
-            <h2><a href="https://t.me/intectualista">Goldzzk7 Surface./𝝅<img src="https://i.postimg.cc/F7NzzLRg/ECCA95-BD-7-AD5-4-C85-9-EC7-8-E3189-DD1693.jpg" alt="Telegram" class="telegram-logo"></a></h2>
-            <img src="https://i.postimg.cc/Vrv93hyv/4-AE233-EE-83-A4-40-E9-95-E7-AC436-E4625-DE.jpg" alt="Goldzzk7 Surface" class="profile-image">
-            <p class="static-led">A Cobiça</p>
-        </section>
-        <section class="profile">
-            <h2><a href="https://t.me/tribunaldocrime999">Pg Surface./𝝅<img src="https://i.postimg.cc/F7NzzLRg/ECCA95-BD-7-AD5-4-C85-9-EC7-8-E3189-DD1693.jpg" alt="Telegram" class="telegram-logo"></a></h2>
-            <img src="https://i.postimg.cc/HVyf9FRp/2011200-F-35-B7-40-D4-B22-B-7-D8-C37-C07267.jpg" alt="Pg Surface" class="profile-image">
-            <p class="static-led">A Justiça</p>
-        </section>
-        <section class="profile">
-            <h2><a href="https://t.me/some-profile">NeedX surface./𝝅<img src="https://i.postimg.cc/F7NzzLRg/ECCA95-BD-7-AD5-4-C85-9-EC7-8-E3189-DD1693.jpg" alt="Telegram" class="telegram-logo"></a></h2>
-            <img src="https://i.postimg.cc/mcCYdyR1/D02-F6176-EC91-496-D-ABDF-3982-C5-A0-BAC0.jpg" alt="NeedX surface" class="profile-image">
-            <p class="static-led">A Força</p>
-        </section>
-    </main>
+<div class="container">
+    <div class="image-container">
+        <img src="https://i.postimg.cc/9DXBgVnM/B2222512-0487-4571-83-AD-B3-DE01-B33443.jpg" alt="Recomeço" class="rounded-image">
+    </div>
+    <h1 class="title">O Meu Recomeço</h1>
+    <p class="quote">É mais fácil lidar com uma má consciência do que com uma má reputação.</p>
+    <p class="author" onclick="window.location.href='https://pt.m.wikipedia.org/wiki/Friedrich_Nietzsche'">Friedrich Nietzsche</p>
+    <div class="buttons">
+        <button class="button" onclick="showContent('about')">Sobre mim</button>
+        <button class="button" onclick="showContent('contact')">Contato</button>
+        <button class="button" onclick="showContent('inspiration')">Minhas Inspirações</button>
+        <button class="button" onclick="showContent('hobby')">Meu Hobby</button>
+    </div>
+    <div id="about" class="content hidden">
+        <p>Olá! Sempre fui reconhecido na internet como Russo. Em alguns momentos, falhei em muitas coisas, mas o importante é que aprendi com isso. Talvez eu esteja longe neste momento, mas voltarei em breve para acertar. Sou editor, escritor, investigador, programador e criador de conteúdo em geral. Quer um conselho? Não existe idade para aprender, muito menos um diploma, pois isso não significa nada. O que você precisa é de tempo para começar. Obrigado pela leitura.</p>
+    </div>
+    <div id="contact" class="content hidden">
+        <p>Email: <a href="mailto:russokkji@gmail.com">russokkji@gmail.com</a></p>
+    </div>
+    <div id="inspiration" class="content hidden">
+        <p>Conteúdo:</p>
+        <ul>
+            <li><a href="https://youtube.com/@stackzoficial?si=z8uZUFvlcr48tdwa" target="_blank">1. Gustavo Pinheiro</a></li>
+            <li><a href="https://youtube.com/@cellbits?si=500RwfKANz3q_zZ2" target="_blank">2. Cellbit</a></li>
+            <li><a href="https://youtube.com/@semydeus?si=Eq3ZIG7MG3Tucf2H" target="_blank">3. Semyde</a></li>
+            <li><a href="https://youtube.com/@abismodomedobr?si=FO7rh6GBMgSiOfwC" target="_blank">4. Abismo do Medo</a></li>
+        </ul>
+    </div>
+    <div id="hobby" class="content hidden">
+        <p>Meu hobby: <a href="https://pt.m.wikipedia.org/wiki/Linguagem_de_programa%C3%A7%C3%A3o" target="_blank">Linguagem de Programação</a></p>
+    </div>
+    <div class="extra">
+        <strong>Estou fora da web permanentemente.</strong>
+    </div>
+</div>
+<script>
+function showContent(id) {
+    var elements = document.querySelectorAll('.content');
+    elements.forEach(function(element) {
+        element.classList.add('hidden');
+    });
+    document.getElementById(id).classList.remove('hidden');
+}
+</script>
 </body>
 </html>
