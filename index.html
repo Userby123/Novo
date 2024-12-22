@@ -1,141 +1,140 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>O Meu Recomeço</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background: url('https://i.postimg.cc/H888rvnb/6-B16-B23-F-65-BA-44-B2-A9-D3-AE28-F11-FE93-B.jpg') no-repeat center center fixed;
-        background-size: cover;
-        color: #fff;
-        text-align: center;
-        padding: 20px;
-        margin: 0;
-    }
-    .container {
-        background: rgba(0, 0, 0, 0.7);
-        padding: 20px;
-        border-radius: 10px;
-        display: inline-block;
-        margin-top: 50px;
-    }
-    .rounded-image {
-        border-radius: 50%;
-        width: 150px;
-        height: 150px;
-        border: 5px solid white;
-        box-shadow: 0 0 20px white;
-    }
-    .title {
-        color: red;
-        font-size: 36px;
-        text-align: center;
-        margin: 0;
-    }
-    .quote {
-        font-size: 16px;
-        color: red;
-        font-style: italic;
-        margin: 20px 0;
-    }
-    .author {
-        font-size: 14px;
-        color: white;
-        cursor: pointer;
-    }
-    .author:hover {
-        color: yellow;
-    }
-    .buttons {
-        margin-top: 20px;
-    }
-    .button {
-        background-color: black;
-        color: white;
-        padding: 10px 20px;
-        margin: 5px;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-    }
-    .button-back {
-        background-color: red;
-        color: black;
-    }
-    .button:hover {
-        opacity: 0.8;
-    }
-    .hidden {
-        display: none;
-    }
-    .content {
-        background-color: rgba(255, 255, 255, 0.8);
-        color: black;
-        padding: 20px;
-        border-radius: 10px;
-        text-align: left;
-        margin-top: 10px;
-    }
-    .content a {
-        color: red;
-        text-decoration: none;
-    }
-    .content a:hover {
-        text-decoration: underline;
-    }
-    .extra {
-        font-size: 12px;
-        color: gray;
-        margin-top: 20px;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROFILE OF A DETECTIVE</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 2em;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .bubble-image {
+            width: 80%;
+            max-width: 300px;
+            border-radius: 50%;
+            margin-top: 20px;
+        }
+        .text-static {
+            color: red;
+            font-style: italic;
+            margin: 20px 0;
+        }
+        .contact-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .contact-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #1c1c1c;
+            padding: 10px;
+            border-radius: 5px;
+            width: 150px;
+        }
+        .contact-card img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+        .contact-card a {
+            color: red;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .contact-card a:active {
+            color: yellow;
+        }
+        .contact-card a:active:after {
+            content: " (copiado)";
+            color: yellow;
+        }
+        .contact-card .subtitle {
+            color: white;
+            font-size: 0.8em;
+        }
+        .leds {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .led {
+            width: 15px;
+            height: 15px;
+            margin: 0 5px;
+            border-radius: 50%;
+            background-color: #ff0000;
+            animation: blink 1s infinite alternate;
+        }
+        @keyframes blink {
+            from {opacity: 1;}
+            to {opacity: 0.3;}
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5em;
+            }
+            .bubble-image {
+                width: 100%;
+                max-width: 200px;
+            }
+            .contact-container {
+                flex-direction: column;
+            }
+            .contact-card {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: #888;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-    <div class="image-container">
-        <img src="https://i.postimg.cc/9DXBgVnM/B2222512-0487-4571-83-AD-B3-DE01-B33443.jpg" alt="Recomeço" class="rounded-image">
+    <div class="container">
+        <h1>PROFILE OF A DETECTIVE</h1>
+        <img src="https://i.ibb.co/tprbPgJ/8-DD5-E687-DA25-41-EF-8570-E0-EC11-EB65-E8.jpg" alt="Bubble Image" class="bubble-image">
+        <div class="leds">
+            <div class="led"></div>
+            <div class="led"></div>
+            <div class="led"></div>
+            <div class="led"></div>
+        </div>
+        <div class="text-static">
+            Olá, caro amigo! Este é meu site, feito especialmente como um portfólio e para a contratação de casos na internet. Não tenho um diploma, mas tenho experiência na investigação digital. Caso esteja interessado em resolver um caso que ainda está sem solução, como desaparecimento, ou precise de cuidados na internet para não ser supostamente vítima de um golpista, psicopata, hacker, ou até um nazista, basta me chamar nos contatos deixados abaixo. Obrigado pela leitura!
+        </div>
+        <div class="contact-container">
+            <div class="contact-card">
+                <img src="https://i.ibb.co/DQP6dSX/160-AD10-A-7059-4721-A349-0-D45-D089-ADF7.jpg" alt="Gmail">
+                <a href="mailto:russokkji@gmail.com" onclick="navigator.clipboard.writeText('russokkji@gmail.com')">Gmail</a>
+                <div class="subtitle">Copie</div>
+            </div>
+            <div class="contact-card">
+                <img src="https://i.ibb.co/KFXdvQ4/5-BDBCF3-E-A4-E6-4835-A2-D4-1-E6-EB11789-AF.jpg" alt="WhatsApp">
+                <a href="https://wa.me/5587991183950" target="_blank">WhatsApp</a>
+                <div class="subtitle">Fale Conosco</div>
+            </div>
+        </div>
+        <footer>
+            Copyright 2024-2025. Todos os direitos reservados a mim.
+        </footer>
     </div>
-    <h1 class="title">O Meu Recomeço</h1>
-    <p class="quote">É mais fácil lidar com uma má consciência do que com uma má reputação.</p>
-    <p class="author" onclick="window.location.href='https://pt.m.wikipedia.org/wiki/Friedrich_Nietzsche'">Friedrich Nietzsche</p>
-    <div class="buttons">
-        <button class="button" onclick="showContent('about')">Sobre mim</button>
-        <button class="button" onclick="showContent('contact')">Contato</button>
-        <button class="button" onclick="showContent('inspiration')">Minhas Inspirações</button>
-        <button class="button" onclick="showContent('hobby')">Meu Hobby</button>
-    </div>
-    <div id="about" class="content hidden">
-        <p>Olá! Sempre fui reconhecido na internet como Russo. Em alguns momentos, falhei em muitas coisas, mas o importante é que aprendi com isso. Talvez eu esteja longe neste momento, mas voltarei em breve para acertar. Sou editor, escritor, investigador, programador e criador de conteúdo em geral. Quer um conselho? Não existe idade para aprender, muito menos um diploma, pois isso não significa nada. O que você precisa é de tempo para começar. Obrigado pela leitura.</p>
-    </div>
-    <div id="contact" class="content hidden">
-        <p>Email: <a href="mailto:russokkji@gmail.com">russokkji@gmail.com</a></p>
-    </div>
-    <div id="inspiration" class="content hidden">
-        <p>Conteúdo:</p>
-        <ul>
-            <li><a href="https://youtube.com/@stackzoficial?si=z8uZUFvlcr48tdwa" target="_blank">1. Gustavo Pinheiro</a></li>
-            <li><a href="https://youtube.com/@cellbits?si=500RwfKANz3q_zZ2" target="_blank">2. Cellbit</a></li>
-            <li><a href="https://youtube.com/@semydeus?si=Eq3ZIG7MG3Tucf2H" target="_blank">3. Semyde</a></li>
-            <li><a href="https://youtube.com/@abismodomedobr?si=FO7rh6GBMgSiOfwC" target="_blank">4. Abismo do Medo</a></li>
-        </ul>
-    </div>
-    <div id="hobby" class="content hidden">
-        <p>Meu hobby: <a href="https://pt.m.wikipedia.org/wiki/Linguagem_de_programa%C3%A7%C3%A3o" target="_blank">Linguagem de Programação</a></p>
-    </div>
-    <div class="extra">
-        <strong>Estou fora da web permanentemente.</strong>
-    </div>
-</div>
-<script>
-function showContent(id) {
-    var elements = document.querySelectorAll('.content');
-    elements.forEach(function(element) {
-        element.classList.add('hidden');
-    });
-    document.getElementById(id).classList.remove('hidden');
-}
-</script>
 </body>
 </html>
