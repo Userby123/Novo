@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROFILE OF A DETECTIVE</title>
+    <title>DETECTIVE</title>
     <style>
         body {
             background-color: #121212;
             color: #ffffff;
             margin: 0;
             font-family: Arial, sans-serif;
+            background-image: url('https://i.ibb.co/L0Wjj65/D9-FA1316-AE3-C-43-C3-A1-ED-E21104-A23-D58.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            backdrop-filter: blur(5px);
         }
         .container {
             text-align: center;
@@ -25,6 +29,18 @@
             max-width: 300px;
             border-radius: 50%;
             margin-top: 20px;
+            position: relative;
+            animation: led-border 1s infinite alternate;
+        }
+        @keyframes led-border {
+            from { box-shadow: 0 0 10px 2px #ff0000; }
+            to { box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.5); }
+        }
+        .header-text {
+            font-size: 0.8em;
+            color: red;
+            font-style: italic;
+            margin-top: 10px;
         }
         .text-static {
             color: red;
@@ -33,7 +49,7 @@
         }
         .contact-container {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             margin-top: 20px;
         }
         .contact-card {
@@ -43,24 +59,28 @@
             background-color: #1c1c1c;
             padding: 10px;
             border-radius: 5px;
-            width: 150px;
+            width: 100px;
+            margin: 10px;
         }
         .contact-card img {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             margin-bottom: 10px;
         }
         .contact-card a {
             color: red;
-            font-weight: bold;
             text-decoration: none;
         }
         .contact-card a:active {
             color: yellow;
         }
-        .contact-card a:active:after {
+        .contact-card a:after {
             content: " (copiado)";
             color: yellow;
+            display: none;
+        }
+        .contact-card a:active:after {
+            display: inline;
         }
         .contact-card .subtitle {
             color: white;
@@ -83,34 +103,64 @@
             from {opacity: 1;}
             to {opacity: 0.3;}
         }
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.5em;
-            }
-            .bubble-image {
-                width: 100%;
-                max-width: 200px;
-            }
-            .contact-container {
-                flex-direction: column;
-            }
-            .contact-card {
-                width: 100%;
-                margin-bottom: 20px;
-            }
+        .crime-stats-title {
+            color: white;
+            font-size: 1.5em;
+            margin: 30px 0 10px;
+            font-style: italic;
+        }
+        .crime-cards {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .crime-card {
+            background-color: #1c1c1c;
+            padding: 20px;
+            border-radius: 5px;
+            width: 300px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            color: red;
+            font-size: 1em;
+            font-weight: bold;
+            position: relative;
+        }
+        .crime-card .symbol {
+            width: 50px;
+            height: 50px;
+            border: 2px dashed #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .crime-card .details {
+            color: white;
+            font-size: 0.8em;
+            font-style: italic;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
         }
         footer {
-            margin-top: 20px;
             font-size: 0.8em;
             color: #888;
             text-align: center;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>PROFILE OF A DETECTIVE</h1>
+        <h1>DETECTIVE</h1>
         <img src="https://i.ibb.co/tprbPgJ/8-DD5-E687-DA25-41-EF-8570-E0-EC11-EB65-E8.jpg" alt="Bubble Image" class="bubble-image">
+        <div class="header-text">Inspirado no Personagem Detetive L de Death Note</div>
         <div class="leds">
             <div class="led"></div>
             <div class="led"></div>
@@ -123,13 +173,56 @@
         <div class="contact-container">
             <div class="contact-card">
                 <img src="https://i.ibb.co/DQP6dSX/160-AD10-A-7059-4721-A349-0-D45-D089-ADF7.jpg" alt="Gmail">
-                <a href="mailto:russokkji@gmail.com" onclick="navigator.clipboard.writeText('russokkji@gmail.com')">Gmail</a>
-                <div class="subtitle">Copie</div>
+                <a href="mailto:russokkji@gmail.com" onclick="navigator.clipboard.writeText('russokkji@gmail.com'); alert('Email copiado!')">Gmail</a>
+                <div class="subtitle">fale conosco</div>
             </div>
             <div class="contact-card">
                 <img src="https://i.ibb.co/KFXdvQ4/5-BDBCF3-E-A4-E6-4835-A2-D4-1-E6-EB11789-AF.jpg" alt="WhatsApp">
                 <a href="https://wa.me/5587991183950" target="_blank">WhatsApp</a>
-                <div class="subtitle">Fale Conosco</div>
+                <div class="subtitle">fale conosco</div>
+            </div>
+        </div>
+        <div class="crime-stats-title">Crimes</div>
+        <div class="crime-cards">
+            <div class="crime-card">
+                <div class="symbol">👤</div>
+                <div class="details">
+                    <div>Nome: ______________________</div>
+                    <div>Data de Nascimento: ________</div>
+                    <div>CPF: _______________________</div>
+                </div>
+            </div>
+            <div class="crime-card">
+                <div class="symbol">👤</div>
+                <div class="details">
+                    <div>Nome: ______________________</div>
+                    <div>Data de Nascimento: ________</div>
+                    <div>CPF: _______________________</div>
+                </div>
+            </div>
+            <div class="crime-card">
+                <div class="symbol">👤</div>
+                <div class="details">
+                    <div>Nome: ______________________</div>
+                    <div>Data de Nascimento: ________</div>
+                    <div>CPF: _______________________</div>
+                </div>
+            </div>
+            <div class="crime-card">
+                <div class="symbol">👤</div>
+                <div class="details">
+                    <div>Nome: ______________________</div>
+                    <div>Data de Nascimento: ________</div>
+                    <div>CPF: _______________________</div>
+                </div>
+            </div>
+            <div class="crime-card">
+                <div class="symbol">👤</div>
+                <div class="details">
+                    <div>Nome: ______________________</div>
+                    <div>Data de Nascimento: ________</div>
+                    <div>CPF: _______________________</div>
+                </div>
             </div>
         </div>
         <footer>
